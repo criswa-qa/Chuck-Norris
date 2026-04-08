@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "65a82c9b-46fb-4a41-a5bd-b5a0c02869ec",
+    "name": "Chuck Norris",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53794638",
+    "_collection_link": "https://go.postman.co/collection/53794638-65a82c9b-46fb-4a41-a5bd-b5a0c02869ec?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "comprobar 200",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "categorias",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"El número de categorías es 16\", function() {\r",
+              "var jsonData = pm.response.json();\r",
+              "pm.expect(jsonData.length).to.equal(16);\r",
+              "}) "
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.chucknorris.io/jokes/categories",
+          "protocol": "https",
+          "host": [
+            "api",
+            "chucknorris",
+            "io"
+          ],
+          "path": [
+            "jokes",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
